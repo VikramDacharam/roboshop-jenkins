@@ -1,9 +1,7 @@
 - name: Ansible playbook to create all roboshop jobs
   hosts: localhost
-  tasks:
-    - name: include role
-      include_role:
-        name: jenkins-jobs
+  roles:
+      - jenkins-jobs
 
 
 
