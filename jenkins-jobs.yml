@@ -1,5 +1,5 @@
 - name: Ansible playbook to create all roboshop jobs
-  hosts: [172.31.8.47]
+  hosts: localhost
   roles:
     - jenkins-jobs
 
