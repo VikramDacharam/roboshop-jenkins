@@ -1,0 +1,12 @@
+- name: create a template file
+  template:
+    src: pipeline-job.xml
+    dest: /tmp
+
+- name: create jenkins job
+  community.general.jenkins_job:
+    config: "{{ lookup('file', 'temp/pipeline-job.xml') }}"
+    name: "{{item.folderName}}/{{item.jobName}}"
+    password: admin
+    user: admin
+    url: http://172.31.8.47:8080
