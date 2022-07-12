@@ -10,7 +10,7 @@
 
 - name: create pipeline Jobs
   include_role:
-    name: pipeline-jobs
+    name: jenkins-jobs
     tasks_from: pipeline-job
   loop: "{{pipeline_jobs}}"
 
