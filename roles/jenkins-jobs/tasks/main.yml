@@ -10,11 +10,9 @@
 
 - name: create pipeline Jobs
   include_role:
-    name: pipeline_job
+    name: pipeline-jobs
     tasks_from: pipeline-job
-  loop:
-    - { jobName: "sample3", folderName: "demo",repoName: "jenkins-learning"}
-    - { jobName: "sample4", folderName: "demo",repoName: "sample-one"}
+  loop: "{{pipeline_jobs}}"
 
 
 
