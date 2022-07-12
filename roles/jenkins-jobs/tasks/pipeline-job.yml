@@ -1,4 +1,4 @@
-- name: create a template file
+- name: Create a template file
   template:
     src: pipeline-job.xml
     dest: /tmp
