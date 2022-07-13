@@ -3,6 +3,8 @@
   roles:
     - jenkins-jobs
   vars:
+    folders:
+      - demo
     pipeline_jobs:
       - { jobName: "Sample3", folderName: "demo", repoName: "jenkins-learning"}
       - { jobName: "Sample4", folderName: "demo", repoName: "jenkins-somthing"}
