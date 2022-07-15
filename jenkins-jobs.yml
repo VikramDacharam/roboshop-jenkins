@@ -4,11 +4,7 @@
     - jenkins-jobs
   vars:
     folders:
-      - demo
+      - APP-SETUP-WITH-ANSIBLE
     pipeline_jobs:
-      - { jobName: "Sample3", folderName: "demo", repoName: "jenkins-learning"}
-      - { jobName: "Sample4", folderName: "demo", repoName: "jenkins-somthing"}
-
-
-
+      - { jobName: "roboshop", folderName: "demo", repoName: "roboshop-ansible"}
 
