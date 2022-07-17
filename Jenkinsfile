@@ -1,10 +1,5 @@
 pipeline{
-  agent {
-    node {
-      label 'workstation'
-    }
-
-  }
+  agent any
 
   stages{
     stage('jobs create'){
