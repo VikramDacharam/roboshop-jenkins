@@ -1,4 +1,4 @@
-- name: Ansible playbook to create all roboshop jobs
+- name: Ansible Playbook to Create all the RoboShop Project Jobs in Jenkins Server.
   hosts: localhost
   roles:
     - jenkins-jobs
@@ -6,5 +6,5 @@
     folders:
       - APP-SETUP-WITH-ANSIBLE
     pipeline_jobs:
-      - { jobName: "roboshop", folderName: "APP-SETUP-WITH-ANSIBLE", repoName: "roboshop-ansible"}
+      - { jobName: "roboshop", folderName: "APP-SETUP-WITH-ANSIBLE", repoName: "roboshop-ansible", fileName: "Jenkinsfile" }
 
