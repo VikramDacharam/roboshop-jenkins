@@ -8,7 +8,7 @@ pipeline{
   stages{
     stage('jobs create'){
       steps{
-        sh 'ansible-playbook jenkins-jobs.yml'
+        sh 'ansible-playbook -vv jenkins-jobs.yml'
       }
     }
   }
