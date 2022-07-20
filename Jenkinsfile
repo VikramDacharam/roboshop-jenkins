@@ -5,7 +5,7 @@ pipeline {
 
     stage('Jobs Create') {
       steps {
-        sh 'ansible-playbook -vv jenkins-jobs.yml'
+        sh 'ansible-playbook jenkins-jobs.yml'
       }
     }
 
