@@ -1,13 +1,13 @@
-- name: create jenkins folders
+- name: Create Jenkins Folders
   community.general.jenkins_job:
     config: "{{ lookup('file', 'templates/folder.xml') }}"
     name: "{{item}}"
     password: admin
     user: admin
-    url: http://3.239.108.147:8080
+    url: http://172.31.7.43:8080
   loop: "{{folders}}"
 
-- name: create pipeline Jobs
+- name: Create Pipeline Jobs
   include_role:
     name: jenkins-jobs
     tasks_from: pipeline-job
