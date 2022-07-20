@@ -1,15 +1,17 @@
-pipeline{
-  agent {
-    node{
-      label 'ansible'
-    }
+pipeline {
+  agent any
+
+  options {
+    ansiColor('xterm')
   }
 
-  stages{
-    stage('jobs create'){
-      steps{
+  stages {
+
+    stage('Jobs Create') {
+      steps {
         sh 'ansible-playbook -vv jenkins-jobs.yml'
       }
     }
+
   }
 }
