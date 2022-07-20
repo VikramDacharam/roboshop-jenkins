@@ -6,5 +6,5 @@
     folders:
       - APP-SETUP-WITH-ANSIBLE
     pipeline_jobs:
-      - { jobName: "roboshop", folderName: "APP-SETUP-WITH-ANSIBLE", repoName: "roboshop-ansible", fileName: "Jenkinsfile"}
+      - { jobName: "roboshop", folderName: "APP-SETUP-WITH-ANSIBLE", repoName: "roboshop-ansible"}
 
