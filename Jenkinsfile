@@ -1,8 +1,12 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'ansible'
+    }
+
+  }
 
   options {
-      disableConcurrentBuilds()
       ansiColor('xterm')
   }
 
