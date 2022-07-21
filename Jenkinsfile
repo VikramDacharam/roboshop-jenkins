@@ -1,9 +1,5 @@
 pipeline {
-  agent{
-    node{
-      label 'ansible'
-    }
-  }
+  agent any
 
   stages {
 
