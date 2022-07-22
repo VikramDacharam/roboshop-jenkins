@@ -36,7 +36,7 @@ def call (){
                 }
             }
         }
-        stages {
+        stages{
             stage("create instance"){
                 steps{
                     dir('ANSIBLE') {
