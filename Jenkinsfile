@@ -1,11 +1,8 @@
 pipeline {
-  agent {
-    node {
+  agent any
 
-      label 'workstation'
-
-    }
-
+  options {
+    ansiColor('xterm')
   }
 
   stages {
