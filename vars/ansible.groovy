@@ -1,5 +1,4 @@
 def call (){
-
     pipeline {
         agent any
 
@@ -10,19 +9,47 @@ def call (){
         environment {
             SSH = credentials('SSH')
         }
+        stages{
+            stage('Checkout code - DEV'){
+                when {
+                    expression{
+                        ENV == "dev"
+                    }
+                }
+                steps{
+                    dir('ANSIBLE'){
+                        git branch: 'dev', url: 'https://github.com/VikramDacharam/roboshop-jenkins.git'
+                    }
 
+                }
+            }
+            stage('Checkout code - PROD'){
+                when {
+                    expression{
+                        ENV == "prod"
+                    }
+                }
+                steps{
+                    dir('ANSIBLE'){
+                        git branch: 'main', url: 'https://github.com/VikramDacharam/roboshop-jenkins.git'
+                    }
+                }
+            }
+        }
         stages {
             stage("create instance"){
                 steps{
-                    sh 'bash create-ec2-with-env.sh ${COMPONENT} ${ENV}'
+                    dir('ANSIBLE') {
+                        sh 'bash create-ec2-with-env.sh ${COMPONENT} ${ENV}'
+                    }
                 }
             }
             stage(' Run Ansible '){
                 steps {
-                    sh 'ansible-playbook -i inv roboshop.yml -e HOST=${COMPONENT} -e ROLE_NAME=${COMPONENT} -e ENV=${ENV} -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW}'
-                }
+                    dir('ANSIBLE') {
+                        sh 'ansible-playbook -i inv roboshop.yml -e HOST=${COMPONENT} -e ROLE_NAME=${COMPONENT} -e ENV=${ENV} -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW}'
+                    }               }
             }
-
         }
 
     }
