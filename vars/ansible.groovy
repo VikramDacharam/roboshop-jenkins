@@ -50,7 +50,7 @@ def call() {
             stage('Run Ansible Playbook') {
                 steps {
                     dir('ANSIBLE') {
-                        sh 'ansible-playbook -i inv roboshop.yml -e ENV=${ENV} -e ansible_user=${SSH_USR} -k -e HOST=${COMPONENT} -e ROLE_NAME=${COMPONENT}'
+                        sh 'ansible-playbook -i inv roboshop.yml -e ENV=${ENV} -e ansible_user=${SSH_USR} -e ansible_password=DevOps321 -e HOST=${COMPONENT} -e ROLE_NAME=${COMPONENT}'
                     }
                 }
             }
