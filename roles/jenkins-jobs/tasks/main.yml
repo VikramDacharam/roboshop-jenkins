@@ -4,7 +4,7 @@
     name: "{{item}}"
     password: admin
     user: admin
-    url: http://172.31.13.240:8080
+    url: http://172.31.0.5:8080
   loop: "{{folders}}"
 
 - name: Create Pipeline Jobs
