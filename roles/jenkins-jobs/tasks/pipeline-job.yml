@@ -8,7 +8,7 @@
     name: "{{item.folderName}}/{{item.jobName}}"
     user: admin
     password: admin
-    url: http://172.31.13.99:8080
+    url: http://172.31.3.206:8080
   register: job_info
   ignore_errors: yes
 
@@ -18,5 +18,5 @@
     name: "{{item.folderName}}/{{item.jobName}}"
     password: admin
     user: admin
-    url: http://172.31.13.99:8080
+    url: http://172.31.3.206:8080
   when: job_info.failed
